@@ -35,7 +35,7 @@ namespace API_Access.Controllers
                 double[] coords = GetLocation(reqURL);
 
                 // Connect to Flickr API
-                Flickr flickrObj = new Flickr("apikey", "secret");
+                Flickr flickrObj = new Flickr("381fe72e6e5d44f22c6192a211e5fbf0", "95203e8b65291995");
                 PhotoSearchOptions options = new PhotoSearchOptions();
                 // set the search criteria using the results from Nominatum
                 options.MediaType = MediaType.Photos; // Only get photos
@@ -89,7 +89,10 @@ namespace API_Access.Controllers
                     // parse the JSON
                     JArray jsonResult = JArray.Parse(test);
                     // get the lat/lon values
+                    double lat = (double)jsonResult[0]["lat"];
+                    double lon = (double)jsonResult[0]["lon"];
 
+                    
                     // ***************************************
                     // ******** YOUR CODE GOES HERE **********
                     // ***************************************
